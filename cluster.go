@@ -13,10 +13,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/go-redis/redis/v7/internal"
-	"github.com/go-redis/redis/v7/internal/hashtag"
-	"github.com/go-redis/redis/v7/internal/pool"
-	"github.com/go-redis/redis/v7/internal/proto"
+	"github.com/antoinefinkelstein/redis/v7/internal"
+	"github.com/antoinefinkelstein/redis/v7/internal/hashtag"
+	"github.com/antoinefinkelstein/redis/v7/internal/pool"
+	"github.com/antoinefinkelstein/redis/v7/internal/proto"
 )
 
 var errClusterNoNodes = fmt.Errorf("redis: cluster has no nodes")

@@ -6,7 +6,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/go-redis/redis/v7/internal/proto"
+	"github.com/antoinefinkelstein/redis/v7/internal/proto"
 )
 
 // CustomErrorsToRetry is a function that can be set up to define custom errors
