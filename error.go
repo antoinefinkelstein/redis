@@ -9,6 +9,10 @@ import (
 	"github.com/go-redis/redis/v7/internal/proto"
 )
 
+// CustomErrorsToRetry is a function that can be set up to define custom errors
+// for which retries should be performed.
+var CustomErrorsToRetry = func(err error) bool { return false }
+
 func isRetryableError(err error, retryTimeout bool) bool {
 	switch err {
 	case nil, context.Canceled, context.DeadlineExceeded:
@@ -36,7 +40,7 @@ func isRetryableError(err error, retryTimeout bool) bool {
 	if strings.HasPrefix(s, "CLUSTERDOWN ") {
 		return true
 	}
-	return false
+	return CustomErrorsToRetry(err)
 }
 
 func isRedisError(err error) bool {
